@@ -1,0 +1,120 @@
+[
+  {
+    "id": "ml-001",
+    "role": "ML Engineer",
+    "company": "TechCorp",
+    "description": "We are looking for an ML Engineer experienced in deep learning, PyTorch, and MLOps. Must have strong Python skills and experience with model deployment on cloud platforms.",
+    "required_skills": [
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "MLOps",
+      "Docker",
+      "AWS",
+      "Kubernetes",
+      "Deep Learning",
+      "SQL",
+      "Git"
+    ],
+    "trending_skills": ["LLMs", "LangChain", "MLflow"]
+  },
+  {
+    "id": "ml-002",
+    "role": "ML Engineer",
+    "company": "AI Startup",
+    "description": "Seeking ML Engineer to build recommendation systems. Strong background in NLP, transformers, and real-time inference pipelines required.",
+    "required_skills": [
+      "Python",
+      "NLP",
+      "Transformers",
+      "FastAPI",
+      "Redis",
+      "PostgreSQL",
+      "ONNX",
+      "Hugging Face",
+      "MLflow"
+    ],
+    "trending_skills": ["LLMs", "Vector DBs", "Agents"]
+  },
+  {
+    "id": "web-001",
+    "role": "Full Stack Developer",
+    "company": "ProductCo",
+    "description": "Full stack developer needed for React/Node.js applications. Experience with TypeScript, REST APIs, and cloud deployment required.",
+    "required_skills": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Docker",
+      "AWS",
+      "GraphQL",
+      "Redux",
+      "Testing"
+    ],
+    "trending_skills": ["Next.js", "tRPC", "Edge Functions"]
+  },
+  {
+    "id": "web-002",
+    "role": "Full Stack Developer",
+    "company": "SaaS Guru",
+    "description": "Build modern web apps with Next.js, TailWindCSS, and serverless architectures.",
+    "required_skills": [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "Prisma",
+      "tRPC",
+      "PostgreSQL"
+    ],
+    "trending_skills": ["Serverless", "Edge Computing"]
+  },
+  {
+    "id": "ds-001",
+    "role": "Data Scientist",
+    "company": "FinTech Labs",
+    "description": "Analyze financial trends using regression models, statistical testing, and ensemble methods.",
+    "required_skills": [
+      "Python",
+      "Statistics",
+      "Pandas",
+      "SQL",
+      "Scikit-learn",
+      "Time Series Analysis"
+    ],
+    "trending_skills": ["Causal Inference", "Graph Algorithms"]
+  },
+  {
+    "id": "devops-001",
+    "role": "DevOps Engineer",
+    "company": "Cloud Ops",
+    "description": "Manage Kubernetes clusters, Terraform scripts, and CI/CD pipelines for high-availability systems.",
+    "required_skills": [
+      "Kubernetes",
+      "Terraform",
+      "AWS",
+      "CI/CD",
+      "Bash",
+      "Docker",
+      "Prometheus",
+      "Grafana"
+    ],
+    "trending_skills": ["GitOps", "Service Mesh"]
+  },
+  {
+    "id": "ai-001",
+    "role": "AI Engineer",
+    "company": "RAG Labs",
+    "description": "Build RAG systems using vector databases, LLMs, and agentic workflows.",
+    "required_skills": [
+      "Python",
+      "LangChain",
+      "LlamaIndex",
+      "Pinecone",
+      "LLMs",
+      "RAG",
+      "API Integration"
+    ],
+    "trending_skills": ["Agents", "Multimodal models"]
+  }
+]

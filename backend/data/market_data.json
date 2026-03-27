@@ -1,0 +1,42 @@
+{
+  "ML Engineer": {
+    "avg_salary": "₹12-22 LPA",
+    "demand_score": 91,
+    "yoy_growth": "+34%",
+    "top_companies": ["Google", "Amazon", "Flipkart", "Swiggy", "PhonePe"],
+    "trending_skills": ["LLMs", "LangChain", "MLflow", "Kubernetes", "Rust for ML"],
+    "open_roles": "12,400+"
+  },
+  "Full Stack Developer": {
+    "avg_salary": "₹8-18 LPA",
+    "demand_score": 87,
+    "yoy_growth": "+22%",
+    "top_companies": ["Razorpay", "Zepto", "Meesho", "Atlassian", "Salesforce"],
+    "trending_skills": ["TypeScript", "Next.js", "tRPC", "Bun", "Edge Functions"],
+    "open_roles": "31,200+"
+  },
+  "Data Scientist": {
+    "avg_salary": "₹10-20 LPA",
+    "demand_score": 83,
+    "yoy_growth": "+19%",
+    "top_companies": ["Walmart Labs", "Uber", "OLA", "CRED", "Zomato"],
+    "trending_skills": ["dbt", "Databricks", "Causal Inference", "LLM fine-tuning"],
+    "open_roles": "8,700+"
+  },
+  "DevOps Engineer": {
+    "avg_salary": "₹10-20 LPA",
+    "demand_score": 88,
+    "yoy_growth": "+28%",
+    "top_companies": ["ThoughtWorks", "HCL", "Infosys", "Freshworks", "Postman"],
+    "trending_skills": ["Platform Engineering", "eBPF", "Cilium", "GitOps", "Wasm"],
+    "open_roles": "9,100+"
+  },
+  "AI Engineer": {
+    "avg_salary": "₹15-30 LPA",
+    "demand_score": 96,
+    "yoy_growth": "+61%",
+    "top_companies": ["Anthropic", "Google DeepMind", "Microsoft", "Sarvam AI", "Krutrim"],
+    "trending_skills": ["RAG", "Fine-tuning", "Agents", "Vector DBs", "Multimodal"],
+    "open_roles": "5,800+"
+  }
+}

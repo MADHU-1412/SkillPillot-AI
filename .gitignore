@@ -1,0 +1,31 @@
+# Dependencies
+**/node_modules/
+**/dist/
+**/.next/
+**/out/
+**/build/
+
+# Environment
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Python
+**/venv/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+
+# Intelligence Cache
+**/cache/
+**/*.index
+
+# Misc
+.DS_Store
+Thumbs.db
+temp_frontend/
+frontend_old/
+frontend_locked/
+frontend_trash/
+frontend_v1/
+frontend_v2/
