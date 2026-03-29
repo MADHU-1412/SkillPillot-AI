@@ -269,7 +269,14 @@ export function SkillGapDashboard({
           <CardHeader><div className="flex items-center justify-between"><div><CardTitle className="text-xl">{targetRole}</CardTitle><p className="text-sm text-muted-foreground">Market Intelligence</p></div><Badge className="bg-green-50 text-green-700 border-green-200">{marketIntel.demand_score}/100 Demand</Badge></div></CardHeader>
           <CardContent className="space-y-6">
             <div className="grid grid-cols-3 gap-4">
-              <div className="text-center p-3 bg-secondary/50 rounded-lg"><DollarSign className="w-5 h-5 mx-auto mb-1 text-muted-foreground" /><p className="text-lg font-semibold">{marketIntel.salary_range}</p><p className="text-xs text-muted-foreground">Avg Salary</p></div>
+              <div className="text-center p-3 bg-secondary/50 rounded-lg">
+                <DollarSign className="w-5 h-5 mx-auto mb-1 text-muted-foreground" />
+                <p className="text-lg font-semibold">{marketIntel.salary_range}</p>
+                <div className="w-full h-1.5 bg-muted rounded-full mt-2 overflow-hidden">
+                  <div className="h-full bg-green-500 rounded-full w-[65%] animate-pulse" />
+                </div>
+                <p className="text-[10px] text-muted-foreground mt-1">Market Benchmark</p>
+              </div>
               <div className="text-center p-3 bg-secondary/50 rounded-lg"><BarChart3 className="w-5 h-5 mx-auto mb-1 text-muted-foreground" /><p className="text-lg font-semibold">{marketIntel.demand_score}</p><p className="text-xs text-muted-foreground">Demand Score</p></div>
               <div className="text-center p-3 bg-secondary/50 rounded-lg"><TrendingUp className="w-5 h-5 mx-auto mb-1 text-muted-foreground" /><p className="text-lg font-semibold text-green-600">{marketIntel.growth}</p><p className="text-xs text-muted-foreground">YoY Growth</p></div>
             </div>
@@ -285,20 +292,82 @@ export function SkillGapDashboard({
 
 // ============== ROADMAP TIMELINE ==============
 export function RoadmapTimeline({ roadmap, onStartInterview }: { roadmap: any[], onStartInterview: () => void }) {
+  const [completed, setCompleted] = useState<Set<number>>(new Set())
+  const toggleStep = (idx: number) => {
+    const next = new Set(completed)
+    if (next.has(idx)) next.delete(idx)
+    else next.add(idx)
+    setCompleted(next)
+  }
+
+  const progress = Math.round((completed.size / roadmap.length) * 100)
+
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <div className="text-center mb-8"><h2 className="text-2xl font-bold">Your Learning Roadmap</h2><p className="text-muted-foreground mt-1">AI-Powered Career Transformation</p></div>
-      <div className="relative"><div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border" /><div className="space-y-6">{roadmap.map((item, index) => (
-        <div key={index} className="relative flex gap-6">
-          <div className="relative z-10 flex-shrink-0"><div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">W{item.week}</div></div>
-          <Card className="flex-1 hover:shadow-lg transition-shadow"><CardContent className="p-4">
-            <div className="flex items-start justify-between mb-2"><h3 className="font-semibold">{item.topic}</h3><Badge className={item.priority === "critical" ? "bg-red-50 text-red-700" : "bg-orange-50 text-orange-700"}>{item.priority.toUpperCase()}</Badge></div>
-            <div className="text-sm text-primary flex items-center gap-1 mb-2">{item.resource} <ExternalLink className="w-3 h-3" /></div>
-            <div className="flex items-center gap-1 text-xs text-muted-foreground"><Clock className="w-3 h-3" /> ~{item.hours} hrs</div>
-          </CardContent></Card>
+    <div className="w-full max-w-2xl mx-auto space-y-8">
+      <div className="flex items-center justify-between">
+        <div className="text-left">
+          <h2 className="text-2xl font-bold">Your Learning Roadmap</h2>
+          <p className="text-muted-foreground mt-1">AI-Powered Career Transformation</p>
         </div>
-      ))}</div></div>
-      <div className="mt-8 text-center"><Button onClick={onStartInterview} className="h-12 px-8 text-base font-semibold rounded-xl">Start Interview Prep <ChevronRight className="w-5 h-5 ml-1" /></Button></div>
+        <div className="text-right">
+          <p className="text-sm font-medium mb-1">{progress}% Complete</p>
+          <Progress value={progress} className="w-32 h-2" />
+        </div>
+      </div>
+
+      <div className="relative">
+        <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border" />
+        <div className="space-y-6">
+          {roadmap.map((item, index) => (
+            <div key={index} className="relative flex gap-6 group">
+              <div 
+                className={`relative z-10 flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all duration-300 cursor-pointer ${completed.has(index) ? "bg-green-500 text-white scale-110" : "bg-primary text-primary-foreground"}`}
+                onClick={() => toggleStep(index)}
+              >
+                {completed.has(index) ? <Check className="w-6 h-6" /> : `W${item.week}`}
+              </div>
+              <Card className={`flex-1 hover:shadow-lg transition-all duration-300 border-l-4 ${completed.has(index) ? "border-l-green-500 bg-green-50/10 opacity-70" : item.priority === "critical" ? "border-l-red-500" : "border-l-orange-500"}`}>
+                <CardContent className="p-4">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className={`font-semibold transition-all ${completed.has(index) ? "line-through text-muted-foreground" : ""}`}>{item.topic}</h3>
+                    <Badge className={item.priority === "critical" ? "bg-red-50 text-red-700" : "bg-orange-50 text-orange-700"}>
+                      {item.priority.toUpperCase()}
+                    </Badge>
+                  </div>
+                  <a 
+                    href={item.resource.startsWith("http") ? item.resource : `https://${item.resource}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-sm text-primary hover:underline flex items-center gap-1 mb-2 w-fit"
+                  >
+                    {item.resource} <ExternalLink className="w-3 h-3" />
+                  </a>
+                  {item.project_idea && (
+                    <div className="mb-3 p-2 bg-primary/5 rounded border border-primary/10">
+                      <p className="text-[10px] font-bold uppercase text-primary mb-0.5">Hands-on Project</p>
+                      <p className="text-xs text-foreground/80 italic">{item.project_idea}</p>
+                    </div>
+                  )}
+                  <div className="flex items-center justify-between text-xs text-muted-foreground">
+                    <div className="flex items-center gap-1"><Clock className="w-3 h-3" /> ~{item.hours} hrs</div>
+                    <button 
+                      onClick={() => toggleStep(index)}
+                      className="text-primary font-medium hover:underline opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      {completed.has(index) ? "Mark Incomplete" : "Mark Done"}
+                    </button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mt-8 text-center">
+        <Button onClick={onStartInterview} className="h-12 px-8 text-base font-semibold rounded-xl shadow-lg hover:shadow-primary/20 transition-all">
+          Start Interview Prep <ChevronRight className="w-5 h-5 ml-1" />
+        </Button>
+      </div>
     </div>
   )
 }
@@ -352,6 +421,23 @@ export function ChatWindow() {
     <div className="fixed bottom-6 right-6 w-96 h-[500px] bg-card border rounded-2xl shadow-2xl flex flex-col z-50 overflow-hidden">
       <div className="p-4 border-b flex items-center justify-between font-semibold"><div className="flex items-center gap-2"><Sparkles className="w-4 h-4 text-primary" /> SkillPilot Coach</div><button onClick={() => setIsExpanded(false)}><Minus className="w-5 h-5" /></button></div>
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        {messages.length === 0 && (
+          <div className="space-y-3 pt-4">
+            <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Common Questions</p>
+            <div className="grid grid-cols-1 gap-2">
+              {["How do I justify my salary expectation?", "What are the top projects for this role?", "How to prepare for system design?"]
+                .map(tip => (
+                  <button 
+                    key={tip} 
+                    onClick={() => send(tip)}
+                    className="text-left p-3 text-sm bg-secondary rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+                  >
+                    {tip}
+                  </button>
+                ))}
+            </div>
+          </div>
+        )}
         {messages.map((m, i) => (<div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}><div className={`max-w-[80%] px-4 py-2 rounded-2xl text-sm ${m.role === "user" ? "bg-primary text-primary-foreground rounded-br-sm" : "bg-secondary rounded-bl-sm"}`}>{m.content}</div></div>))}
         {isTyping && <Badge variant="secondary" className="animate-pulse">Coach is thinking...</Badge>}
         <div ref={endRef} />

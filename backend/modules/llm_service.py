@@ -18,10 +18,10 @@ FALLBACK: dict = {
         "skills": ["Python", "Scikit-learn", "SQL", "Data Analysis", "Pandas"],
         "roadmap_options": [
             [
-                {"week": 1, "topic": "Neural Networks Fundamentals", "resource": "fast.ai", "hours": 10, "priority": "critical"},
-                {"week": 2, "topic": "PyTorch & Model Training", "resource": "pytorch.org/tutorials", "hours": 12, "priority": "critical"},
-                {"week": 3, "topic": "MLOps with MLflow + Docker", "resource": "mlflow.org", "hours": 10, "priority": "high"},
-                {"week": 4, "topic": "End-to-End Project on Kaggle", "resource": "kaggle.com", "hours": 15, "priority": "high"},
+                {"week": 1, "topic": "Neural Networks Fundamentals", "resource": "fast.ai", "hours": 10, "priority": "critical", "project_idea": "Build a basic MLP for MNIST classification."},
+                {"week": 2, "topic": "PyTorch & Model Training", "resource": "pytorch.org/tutorials", "hours": 12, "priority": "critical", "project_idea": "Implement a CNN for image recognition."},
+                {"week": 3, "topic": "MLOps with MLflow + Docker", "resource": "mlflow.org", "hours": 10, "priority": "high", "project_idea": "Containerize your model and track experiments with MLflow."},
+                {"week": 4, "topic": "End-to-End Project on Kaggle", "resource": "kaggle.com", "hours": 15, "priority": "high", "project_idea": "Participate in a Titanic or House Prices competition."},
             ]
         ],
         "question_options": [
@@ -39,10 +39,10 @@ FALLBACK: dict = {
         "skills": ["React", "JavaScript", "HTML", "CSS", "Git"],
         "roadmap_options": [
             [
-                {"week": 1, "topic": "TypeScript Deep Dive", "resource": "typescriptlang.org", "hours": 8, "priority": "critical"},
-                {"week": 2, "topic": "Node.js + REST APIs", "resource": "nodejs.org", "hours": 10, "priority": "critical"},
-                {"week": 3, "topic": "PostgreSQL + Prisma ORM", "resource": "prisma.io", "hours": 8, "priority": "high"},
-                {"week": 4, "topic": "Docker + CI/CD Pipeline", "resource": "docker.com", "hours": 10, "priority": "high"},
+                {"week": 1, "topic": "TypeScript Deep Dive", "resource": "typescriptlang.org", "hours": 8, "priority": "critical", "project_idea": "Convert an existing JS project to TS."},
+                {"week": 2, "topic": "Node.js + REST APIs", "resource": "nodejs.org", "hours": 10, "priority": "critical", "project_idea": "Build a secure authentication API."},
+                {"week": 3, "topic": "PostgreSQL + Prisma ORM", "resource": "prisma.io", "hours": 8, "priority": "high", "project_idea": "Create a multi-table database schema for an e-commerce app."},
+                {"week": 4, "topic": "Docker + CI/CD Pipeline", "resource": "docker.com", "hours": 10, "priority": "high", "project_idea": "Deploy your app to a cloud provider using GitHub Actions."},
             ]
         ],
         "question_options": [
@@ -60,10 +60,10 @@ FALLBACK: dict = {
         "skills": ["Python", "SQL", "Statistics", "Excel"],
         "roadmap_options": [
             [
-                {"week": 1, "topic": "Advanced SQL & Window Functions", "resource": "mode.com/sql-tutorial", "hours": 8, "priority": "critical"},
-                {"week": 2, "topic": "Statistical Modeling with Python", "resource": "statsmodels.org", "hours": 10, "priority": "critical"},
-                {"week": 3, "topic": "Data Visualization with Plotly", "resource": "plotly.com", "hours": 6, "priority": "high"},
-                {"week": 4, "topic": "A/B Testing & Experimentation", "resource": "experimentguide.com", "hours": 8, "priority": "high"},
+                {"week": 1, "topic": "Advanced SQL & Window Functions", "resource": "mode.com/sql-tutorial", "hours": 8, "priority": "critical", "project_idea": "Perform complex data analysis on a public dataset."},
+                {"week": 2, "topic": "Statistical Modeling with Python", "resource": "statsmodels.org", "hours": 10, "priority": "critical", "project_idea": "Build a linear regression model to predict housing prices."},
+                {"week": 3, "topic": "Data Visualization with Plotly", "resource": "plotly.com", "hours": 6, "priority": "high", "project_idea": "Create an interactive dashboard with Plotly Dash."},
+                {"week": 4, "topic": "A/B Testing & Experimentation", "resource": "experimentguide.com", "hours": 8, "priority": "high", "project_idea": "Design and analyze an A/B test for a website feature."},
             ]
         ],
         "question_options": [
@@ -81,10 +81,10 @@ FALLBACK: dict = {
         "skills": ["Linux", "Bash", "Git", "Networking basics"],
         "roadmap_options": [
             [
-                {"week": 1, "topic": "Docker & Container Fundamentals", "resource": "docker.com/get-started", "hours": 10, "priority": "critical"},
-                {"week": 2, "topic": "Kubernetes Core Concepts", "resource": "kubernetes.io/docs", "hours": 12, "priority": "critical"},
-                {"week": 3, "topic": "Terraform & Infrastructure as Code", "resource": "developer.hashicorp.com", "hours": 10, "priority": "high"},
-                {"week": 4, "topic": "CI/CD with GitHub Actions", "resource": "docs.github.com/actions", "hours": 8, "priority": "high"},
+                {"week": 1, "topic": "Docker & Container Fundamentals", "resource": "docker.com/get-started", "hours": 10, "priority": "critical", "project_idea": "Build and run a multi-container application with Docker Compose."},
+                {"week": 2, "topic": "Kubernetes Core Concepts", "resource": "kubernetes.io/docs", "hours": 12, "priority": "critical", "project_idea": "Deploy a sample application to a Kubernetes cluster."},
+                {"week": 3, "topic": "Terraform & Infrastructure as Code", "resource": "developer.hashicorp.com", "hours": 10, "priority": "high", "project_idea": "Provision cloud infrastructure using Terraform."},
+                {"week": 4, "topic": "CI/CD with GitHub Actions", "resource": "docs.github.com/actions", "hours": 8, "priority": "high", "project_idea": "Automate the build and deployment of a project."},
             ]
         ],
         "question_options": [
@@ -102,10 +102,10 @@ FALLBACK: dict = {
         "skills": ["Python", "API integration", "Prompt engineering"],
         "roadmap_options": [
             [
-                {"week": 1, "topic": "RAG Architecture & Vector Databases", "resource": "docs.pinecone.io", "hours": 10, "priority": "critical"},
-                {"week": 2, "topic": "LangChain & Agent Frameworks", "resource": "python.langchain.com", "hours": 12, "priority": "critical"},
-                {"week": 3, "topic": "Fine-tuning with LoRA & PEFT", "resource": "huggingface.co/docs/peft", "hours": 10, "priority": "high"},
-                {"week": 4, "topic": "Production LLM System Design", "resource": "eugeneyan.com", "hours": 8, "priority": "high"},
+                {"week": 1, "topic": "RAG Architecture & Vector Databases", "resource": "docs.pinecone.io", "hours": 10, "priority": "critical", "project_idea": "Build a knowledge-based QA system with RAG."},
+                {"week": 2, "topic": "LangChain & Agent Frameworks", "resource": "python.langchain.com", "hours": 12, "priority": "critical", "project_idea": "Create a multi-step AI agent for automated research."},
+                {"week": 3, "topic": "Fine-tuning with LoRA & PEFT", "resource": "huggingface.co/docs/peft", "hours": 10, "priority": "high", "project_idea": "Fine-tune a small LLM for a specific task."},
+                {"week": 4, "topic": "Production LLM System Design", "resource": "eugeneyan.com", "hours": 8, "priority": "high", "project_idea": "Architect a production-ready LLM application."},
             ]
         ],
         "question_options": [
@@ -178,9 +178,10 @@ Create a HIGH-IMPACT 4-week learning roadmap that:
 1. Front-loads the highest-demand skills in Week 1 and 2
 2. Recommends the fastest ROI learning resources (real URLs)
 3. Marks each week as critical, high, or medium priority
+4. Provides a concrete 'project_idea' for each week to apply the skills
 
 Return ONLY a JSON array within a root object called 'roadmap'. No explanation. No markdown.
-Format: {{"roadmap": [{{"week": 1, "topic": "...", "resource": "...", "hours": 10, "priority": "critical|high|medium"}}]}}"""
+Format: {{"roadmap": [{{"week": 1, "topic": "...", "resource": "...", "hours": 10, "priority": "critical|high|medium", "project_idea": "..."}}]}}"""
             }],
             model=MODEL,
             response_format={"type": "json_object"}
