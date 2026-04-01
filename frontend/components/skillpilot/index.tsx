@@ -18,6 +18,10 @@ import {
   BarChart3,
   Check,
   FileText,
+  AlertCircle,
+  Edit,
+  Download,
+  Printer,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -282,7 +286,9 @@ export function SkillGapDashboard({
             </div>
             <div className="space-y-3"><h4 className="text-sm font-medium">Trending Skills</h4><div className="flex flex-wrap gap-2">{marketIntel.trending_skills?.map((s: string) => (<Badge key={s} className="bg-orange-50 text-orange-700 border-orange-200 px-3 py-1"><TrendingUp className="w-3 h-3 mr-1" />{s}</Badge>))}</div></div>
             <div className="space-y-3"><h4 className="text-sm font-medium flex items-center gap-2"><Building2 className="w-4 h-4" />Top Companies</h4><div className="flex flex-wrap gap-2">{marketIntel.top_companies?.map((c: string) => (<Badge key={c} variant="outline" className="px-3 py-1">{c}</Badge>))}</div></div>
-            <Button onClick={onGenerateRoadmap} className="w-full h-12 text-base font-semibold rounded-xl">Generate Roadmap <ChevronRight className="w-5 h-5 ml-1" /></Button>
+            <div className="flex flex-col gap-3">
+              <Button onClick={onGenerateRoadmap} className="w-full h-12 text-base font-semibold rounded-xl">Generate Roadmap <ChevronRight className="w-5 h-5 ml-1" /></Button>
+            </div>
           </CardContent>
         </Card>
       </div>

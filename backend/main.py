@@ -12,9 +12,13 @@ from modules.market_intelligence import get_market_intel
 
 app = FastAPI(title="SkillPilot API")
 
+# Simple session storage (In-memory)
+sessions = {}
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -40,6 +44,7 @@ class QuestionsRequest(BaseModel):
 class ChatRequest(BaseModel):
     message: str
     history: List[dict] = []
+
 
 
 @app.get("/")

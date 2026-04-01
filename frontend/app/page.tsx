@@ -26,6 +26,7 @@ export default function SkillPilotApp() {
   const [analysis, setAnalysis] = useState<any>(null)
   const [roadmap, setRoadmap] = useState<any[]>([])
   const [questions, setQuestions] = useState<any[]>([])
+  const [sessionId] = useState(() => `session_${Math.random().toString(36).substring(2, 9)}`)
 
   const handleAnalyzeStart = async (selectedFile: File | null, selectedRole: string, currentSkills: string[]) => {
     setRole(selectedRole)
@@ -95,6 +96,7 @@ export default function SkillPilotApp() {
       setCurrentView("roadmap")
     }
   }
+
 
   const navItems = [
     { id: "upload", label: "Upload", icon: FileText },
