@@ -6,6 +6,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Ensure the app works correctly on GitHub Pages sub-path
+  basePath: '/SkillPillot-AI',
+  trailingSlash: true,
 }
 
 export default nextConfig
