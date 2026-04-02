@@ -4,7 +4,7 @@ SkillPilot AI is a market-driven, AI-powered career coaching platform that analy
 
 ---
 
-## 🔗 Live Demo
+## 🔗 Website
 
 👉 https://madhu-1412.github.io/SkillPillot-AI/
 
